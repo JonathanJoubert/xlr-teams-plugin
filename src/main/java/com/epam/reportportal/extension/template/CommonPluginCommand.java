@@ -14,4 +14,9 @@ public interface CommonPluginCommand<T> extends NamedPluginCommand {
 	 * @return Result
 	 */
 	T executeCommand(Map<String, Object> params);
+
+	@Override
+    	public String getName() {
+      		return "import";
+    	}
 }
