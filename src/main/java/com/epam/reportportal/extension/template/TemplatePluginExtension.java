@@ -102,10 +102,6 @@ public class TemplatePluginExtension implements ReportPortalExtensionPoint, Disp
         return params;
     }
 
-#    @Override
-#    public IntegrationGroupEnum getIntegrationGroup() {
-#        return IntegrationGroupEnum.IMPORT;
-#    }
 
     @Override
     public CommonPluginCommand getCommonCommand(String commandName) {
