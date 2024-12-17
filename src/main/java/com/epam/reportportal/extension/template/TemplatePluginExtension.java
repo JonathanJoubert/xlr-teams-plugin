@@ -98,7 +98,7 @@ public class TemplatePluginExtension implements ReportPortalExtensionPoint, Disp
         params.put(DESCRIPTION_KEY, DESCRIPTION);
         params.put(METADATA, Map.of(IS_INTEGRATIONS_ALLOWED, false));
         params.put("maxFileSize", MAX_FILE_SIZE);
-        params.put("acceptFileMimeTypes", "List of acceptFileMimeTypes"));
+        params.put("acceptFileMimeTypes", "List of acceptFileMimeTypes");
         return params;
     }
 
