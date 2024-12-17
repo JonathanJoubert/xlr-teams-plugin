@@ -33,7 +33,7 @@ import java.util.function.Supplier;
 @Extension
 public class TemplatePluginExtension implements ReportPortalExtensionPoint, DisposableBean {
 
-    private static final String PLUGIN_ID = "template";
+    private static final String PLUGIN_ID = "xlr-teams-plugin";
     public static final String BINARY_DATA_PROPERTIES_FILE_ID = "binary-data.properties";
 
     private final Supplier<Map<String, PluginCommand>> pluginCommandMapping = new MemoizingSupplier<>(this::getCommands);
@@ -95,7 +95,16 @@ public class TemplatePluginExtension implements ReportPortalExtensionPoint, Disp
         Map<String, Object> params = new HashMap<>();
         params.put(ALLOWED_COMMANDS, new ArrayList<>(pluginCommandMapping.get().keySet()));
         params.put(COMMON_COMMANDS, new ArrayList<>(commonPluginCommandMapping.get().keySet()));
+        params.put(DESCRIPTION_KEY, DESCRIPTION);
+        params.put(METADATA, Map.of(IS_INTEGRATIONS_ALLOWED, false));
+        params.put("maxFileSize", MAX_FILE_SIZE);
+        params.put("acceptFileMimeTypes", "List of acceptFileMimeTypes"));
         return params;
+    }
+
+    @Override
+    public IntegrationGroupEnum getIntegrationGroup() {
+        return IntegrationGroupEnum.IMPORT;
     }
 
     @Override
