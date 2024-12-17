@@ -95,10 +95,6 @@ public class TemplatePluginExtension implements ReportPortalExtensionPoint, Disp
         Map<String, Object> params = new HashMap<>();
         params.put(ALLOWED_COMMANDS, new ArrayList<>(pluginCommandMapping.get().keySet()));
         params.put(COMMON_COMMANDS, new ArrayList<>(commonPluginCommandMapping.get().keySet()));
-        params.put(DESCRIPTION_KEY, DESCRIPTION);
-        params.put(METADATA, Map.of(IS_INTEGRATIONS_ALLOWED, false));
-        params.put("maxFileSize", MAX_FILE_SIZE);
-        params.put("acceptFileMimeTypes", "List of acceptFileMimeTypes");
         return params;
     }
 
